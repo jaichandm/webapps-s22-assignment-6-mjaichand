@@ -23,6 +23,10 @@
     <button type="button" class="btn btn-success">Correct: <p id="result_c">0</p></button>
     <button type="button" class="btn btn-danger">Wrong: <p id="result_w">0</p></button>
 </div>
+<br>
+<div class="container">
+    <img src="Kashmir_flycatcher.jpg" id="swapimages" height="100" width="100" alt="Ashy Tit" onclick="swapImage() ">
+</div>
 
 <script> 
 var correct = 0
@@ -43,6 +47,23 @@ function checkGuess(){
         alert("Wrong President")
         out1.innerHTML=wrong
     }    
+}
+var useImage = 1
+function swapImage(){
+    var image = document.getElementById('swapimages');
+    switch (useImage) {
+        case 1: 
+            image.src = "Ashy_tit.jpg"; useImage = 2;
+            break;
+        case 2:
+            image.src = "Iceland_gull.jpg"; useImage = 3;
+            break;
+        case 3:
+            image.src = "Kashmir_flycatcher.jpg"; useImage = 1;
+            break;
+        default:
+            break;
+    }
 }
 </script>
 
