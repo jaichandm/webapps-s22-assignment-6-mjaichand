@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Looping computation by Jaichand</title>
+</head>
+<body>
+
+<h2>Jaichand Mulakalapalli computes tips</h2>
+
+<form>
+    <label for="check_amt1">Enter a check amount</label>
+    <input type ="number" id="check_amt1" name="check_amt1" min=10 max=50 step=2 value=20><br>
+
+    <label for="tip_amt1">Enter tip increase</label>
+    <input type ="number" id="tip_amt1" name="tip_amt1" min= 0.01 max=0.10 step=0.01 value=0.05><br>
+
+    <input type="button" onclick="tips()" value="Find tips">
+</form>
+
+
+<p id="output">This text will be replaced </p>
+
+<script> 
+
+function tips(){
+    console.log("Getting form values")
+    input_amt = document.getElementById("check_amt1").value
+    input_tip = document.getElementById("tip_amt1").value
+    var result = ""
+    var tip_amts = input_amt/10
+    result="Tip amounts by increase of "+input_tip+" are"
+    out = document.getElementById("output")
+    for (let index = 0; index < 10; index++) {
+        result +=" "+tip_amts.toFixed(1);
+        out.innerHTML=result;
+        tip_amts +=(input_amt*input_tip);
+    }
+}
+</script>
+
+</body>
+</html> 
