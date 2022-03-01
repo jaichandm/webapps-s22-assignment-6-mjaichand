@@ -32,9 +32,10 @@ function tips(){
     out = document.getElementById("output")
     for (let index = 0; index < 10; index++) {
         result +=" "+tip_amts.toFixed(1);
-        out.innerHTML=result;
         tip_amts +=(input_amt*input_tip);
     }
+    result +=" (amount was "+input_amt+")"
+    out.innerHTML=result
 }
 </script>
 
