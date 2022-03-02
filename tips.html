@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Looping computation by Jaichand</title>
+    <title>Loop and Radio buttons</title>
 </head>
 <body>
 
@@ -17,11 +17,22 @@
     <input type="button" onclick="tips()" value="Find tips">
 </form>
 
+<p id="output">Your results are displayed here</p>
 
-<p id="output">This text will be replaced </p>
+<form>
+    <input type="radio" id="rtimes" value="times" onclick="chooseOp()" >
+    <label for="rtimes">*</label></br>
+  
+    <input type="radio" id="rdivide" value="divide" onclick="chooseOp()">
+    <label for="rdivide">/</label></br>
+  
+    <input type="radio" id="rexponent"  value="exponent" onclick="chooseOp()">
+    <label for="rexponent">**</label></br>
+</form>
+
+<p id="output2">Choosen operation results</p>
 
 <script> 
-
 function tips(){
     console.log("Getting form values")
     input_amt = document.getElementById("check_amt1").value
@@ -36,6 +47,21 @@ function tips(){
     }
     result +=" (amount was "+input_amt+")"
     out.innerHTML=result
+}
+
+function chooseOp() {
+    console.log("Getting form values")
+    amt = document.getElementById("check_amt1").value
+    tip = document.getElementById("tip_amt1").value
+    out2 = document.getElementById("output2")
+
+    if(document.getElementById("rtimes").checked){
+        out2.innerHTML="<b>(Amount * TipIncrease) Value is: </b>"+amt*tip;
+    }else if (document.getElementById("rdivide").checked) {
+        out2.innerHTML="<b>(Amount / TipIncrease) Value is: </b>"+amt/tip;
+    }else if(document.getElementById("rexponent").checked){
+        out2.innerHTML="<b>(Amount ** TipIncrease) Value is: </b>"+(amt**tip);
+    }
 }
 </script>
 
