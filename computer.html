@@ -22,6 +22,19 @@
 
 <p id="result">Your Order details</p>
 
+<form>
+    <label for="property1">Enter a property name</label>
+    <input type ="text" id="property1" name="property1" value=engraved> <br>
+
+    <label for="property_value1">Enter a value</label>
+    <input type ="text" id="property_value1" name="property_value1"> <br>
+
+    <input type="button" onclick="updateComputer()" value="Update the computer">
+</form>
+
+<p id="result2">Your Order details</p>
+
+
 <script> 
 var my_computer = {}
 function orderComputer (){
@@ -29,7 +42,7 @@ function orderComputer (){
     mem_chk = document.getElementById("extra1").checked
     mouse_chk = document.getElementById("mouse1").checked
     cell_chk = document.getElementById("cell1").checked
-    my_computer = {}
+    my_computer = {};
 
     out = document.getElementById("result")
     if(mem_chk){
@@ -47,7 +60,16 @@ function orderComputer (){
     } else {
         my_computer.cell = false;
     }
-    out.innerHTML="Extra: "+my_computer.extra+", Mouse: "+my_computer.mouse+", Cell Service: "+my_computer.cell;
+    out.innerHTML="my_computer{"+"\"extra\": "+my_computer.extra+",\"mouse\": "+my_computer.mouse+", \"cell\": "+my_computer.cell+"}";
+}
+
+function updateComputer() {
+    console.log("Getting form values")
+    property_1 = document.getElementById("property1").value
+    value_1 = document.getElementById("property_value1").value
+    my_computer[property_1]=value_1
+    out2 = document.getElementById("result2")
+    out2.innerHTML="my_computer" + JSON.stringify(my_computer) +"<b>Successfully updated Order details</b>";
 }
 </script>
 
