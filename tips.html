@@ -2,24 +2,33 @@
 <html>
 <head>
     <title>Loop and Radio buttons</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" 
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" 
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
 </head>
 <body>
 
 <h2>Jaichand Mulakalapalli computes tips</h2>
 
-<form>
+<form style="font-family: 'Courier New', Courier, monospace; font-size: large;">
     <label for="check_amt1">Enter a check amount</label>
     <input type ="number" id="check_amt1" name="check_amt1" min=10 max=50 step=2 value=20><br>
 
     <label for="tip_amt1">Enter tip increase</label>
-    <input type ="number" id="tip_amt1" name="tip_amt1" min= 0.01 max=0.10 step=0.01 value=0.05><br>
+    <input type ="number" id="tip_amt1" name="tip_amt1" min= 0.01 max=1.0 step=0.01 value=0.05><br>
 
-    <input type="button" onclick="tips()" value="Find tips">
+    <input class="btn btn-outline-success" type="button" onclick="tips()" value="Find tips">
 </form>
 
-<p id="output">Your results are displayed here</p>
+<p style="display:inline-block; font-size: small;background-color:rgb(135, 151, 139);font-style: oblique;" id="output">Your results are displayed here</p><br>
 
-<form>
+<form style="font-family: 'Courier New', Courier, monospace; font-size: large;">
     <input type="radio" id="rtimes" value="times" name="radio" onclick="chooseOp()" >
     <label for="rtimes">*</label></br>
   
@@ -30,7 +39,7 @@
     <label for="rexponent">**</label></br>
 </form>
 
-<p id="output2">Choosen operation results</p>
+<p style="display:inline-block; font-size: small;background-color:rgb(135, 151, 139);font-style: oblique;" id="output2">Choosen operation results</p><br>
 
 <script> 
 function tips(){
